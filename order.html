@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Order</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/business-casual.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div class="brand">
+       GMIT Catering Company
+    </div>
+
+    <div align:"center">
+        <img src="img/logoWhite.gif" alt="Logo" style="max-width: 20%;height:auto;width:auto;margin:auto;" class="img-responsive center-block hidden-sm hidden-xs" > 
+    </div>
+    <hr class="hidden-sm hidden-xs">
+    <div class="address-bar">GMIT | Dublin Road Campus | Galway</div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">GMIT Catering Company</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="order.html">Order</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">Blog</a>
+                    </li>
+                    <li class="dropdown">
+
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">User <img alt="" src="img/defaultUser.gif" style="width:25px;height:25px;"/><b class="caret"></b></a>
+
+                         <ul class="dropdown-menu">
+
+                            <li><a href="#">Login</a></li>
+
+                            <li><a href="#">Register</a></li>
+
+                            <li class="divider"></li>
+
+                            <li><a href="#">Cancel</a></li>
+
+                        </ul>
+
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12 text-center">
+                    <form class="form-horizontal" id="orderForm">
+                        <fieldset>
+
+                            <!-- Form Name -->
+                            <legend>Deli Orders</legend>
+
+                            <!-- Select Basic -->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="breadSelect">Bread</label>
+                              <div class="col-md-4">
+                                <select id="breadSelect" name="breadSelect" class="form-control" onchange="getTotal()">
+                                  <option value="none">--none--</option>
+                                  <option value="roll">Roll</option>
+                                  <option value="white">White Slice</option>
+                                  <option value="brown">Brown Slice</option>
+                                  <option value="wrap">Wrap</option>
+                                  <option value="panini">Panini</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <!-- Multiple Checkboxes (inline) -->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="meatCheckbox">Meat</label>
+                              <div class="col-md-4">
+                                <label class="checkbox-inline" for="meatCheckbox-0">
+                                  <input name="meatCheckbox" id="meatCheckbox-0" value="1" type="checkbox" onclick="getTotal()">
+                                  Chicken (hot)
+                                </label>
+                                <label class="checkbox-inline" for="meatCheckbox-1">
+                                  <input name="meatCheckbox" id="meatCheckbox-1" value="2" type="checkbox" onclick="getTotal()">
+                                  Chicken (cold)
+                                </label>
+                                <label class="checkbox-inline" for="meatCheckbox-2">
+                                  <input name="meatCheckbox" id="meatCheckbox-2" value="3" type="checkbox" onclick="getTotal()">
+                                  Ham
+                                </label>
+                                <label class="checkbox-inline" for="meatCheckbox-3">
+                                  <input name="meatCheckbox" id="meatCheckbox-3" value="4" type="checkbox" onclick="getTotal()">
+                                  Bacon
+                                </label>
+                                <label class="checkbox-inline" for="meatCheckbox-4">
+                                  <input name="meatCheckbox" id="meatCheckbox-4" value="5" type="checkbox" onclick="getTotal()">
+                                  Sausages
+                                </label>
+                              </div>
+                            </div>
+
+                            <hr>
+
+                            <!-- Multiple Checkboxes (inline) -->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="fillingsCheckbox">Fillings</label>
+                              <div class="col-md-4">
+                                <label class="checkbox-inline" for="fillingsCheckbox-0">
+                                  <input name="fillingsCheckbox" id="fillingsCheckbox-0" value="1" type="checkbox" onclick="getTotal()">
+                                  Cheese
+                                </label>
+                                <label class="checkbox-inline" for="fillingsCheckbox-1">
+                                  <input name="fillingsCheckbox" id="fillingsCheckbox-1" value="2" type="checkbox" onclick="getTotal()">
+                                  Lettuce
+                                </label>
+                                <label class="checkbox-inline" for="fillingsCheckbox-2">
+                                  <input name="fillingsCheckbox" id="fillingsCheckbox-2" value="3" type="checkbox" onclick="getTotal()">
+                                  Coleslaw
+                                </label>
+                                <label class="checkbox-inline" for="fillingsCheckbox-3">
+                                  <input name="fillingsCheckbox" id="fillingsCheckbox-3" value="4" type="checkbox" onclick="getTotal()">
+                                  Tomato
+                                </label>
+                                <label class="checkbox-inline" for="fillingsCheckbox-4">
+                                  <input name="fillingsCheckbox" id="fillingsCheckbox-4" value="5" type="checkbox" onclick="getTotal()">
+                                  Sun Dried Tomato
+                                </label>
+                                <label class="checkbox-inline" for="fillingsCheckbox-5">
+                                  <input name="fillingsCheckbox" id="fillingsCheckbox-5" value="6" type="checkbox" onclick="getTotal()">
+                                  Potato Salad
+                                </label>
+                                <label class="checkbox-inline" for="fillingsCheckbox-6">
+                                  <input name="fillingsCheckbox" id="fillingsCheckbox-6" value="7" type="checkbox" onclick="getTotal()">
+                                  Onion
+                                </label>
+                                <label class="checkbox-inline" for="fillingsCheckbox-7">
+                                  <input name="fillingsCheckbox" id="fillingsCheckbox-7" value="8" type="checkbox" onclick="getTotal()">
+                                  Sweetcorn
+                                </label>
+                              </div>
+                            </div>
+
+                            <hr>
+
+                            <!-- Multiple Checkboxes (inline) -->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="saucesCheckbox">Sauces</label>
+                              <div class="col-md-4">
+                                <label class="checkbox-inline" for="saucesCheckbox-0">
+                                  <input name="saucesCheckbox" id="saucesCheckbox-0" value="1" type="checkbox" onclick="getTotal()">
+                                  Tomato
+                                </label>
+                                <label class="checkbox-inline" for="saucesCheckbox-1">
+                                  <input name="saucesCheckbox" id="saucesCheckbox-1" value="2" type="checkbox" onclick="getTotal()">
+                                  Brown
+                                </label>
+                                <label class="checkbox-inline" for="saucesCheckbox-2">
+                                  <input name="saucesCheckbox" id="saucesCheckbox-2" value="3" type="checkbox" onclick="getTotal()">
+                                  Mayonnaise
+                                </label>
+                                <label class="checkbox-inline" for="saucesCheckbox-3">
+                                  <input name="saucesCheckbox" id="saucesCheckbox-3" value="4" type="checkbox" onclick="getTotal()">
+                                  Pesto
+                                </label>
+                                <label class="checkbox-inline" for="saucesCheckbox-4">
+                                  <input name="saucesCheckbox" id="saucesCheckbox-4" value="5" type="checkbox" onclick="getTotal()">
+                                  Garlic
+                                </label>
+                                <label class="checkbox-inline" for="saucesCheckbox-5">
+                                  <input name="saucesCheckbox" id="saucesCheckbox-5" value="6" type="checkbox" onclick="getTotal()">
+                                  Sweet 'n' Sour
+                                </label>
+                                <label class="checkbox-inline" for="saucesCheckbox-6">
+                                  <input name="saucesCheckbox" id="saucesCheckbox-6" value="7" type="checkbox" onclick="getTotal()">
+                                  BBQ
+                                </label>
+                              </div>
+                            </div>
+                            <!-- Textarea -->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="requestsTextbox">Additional Requests</label>
+                              <div class="col-md-4">                     
+                                <textarea class="form-control" id="requestsTextbox" name="requestsTextbox">Enter additional requests here (rolls cut in half etc)</textarea>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Total: </label><label style="margin-left:10px;" id="totalLabel">€-</label>
+                                <hr>
+                            </div>
+                            <!-- Button (Double) -->
+                            <div class="form-group">
+                              <div class="col-md-8" >
+                                <button id="okButton" name="okButton" class="btn btn-success pull-right" style="margin:2px;">OK!</button>
+                                <button id="cancelButton" name="cancelButton" class="btn btn-danger pull-right" style="margin:2px;">Cancel</button>
+                              </div>
+                            </div>
+
+                        </fieldset>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <div class="container">
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">Our
+                        <strong>Favorites</strong>
+                    </h2>
+                    <hr>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img class="img-responsive" src="img/blt.jpg" alt="" >
+                    <h3>Classic BLT
+                        <small>€5.45</small>
+                    </h3>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img class="img-responsive" src="img/panini.jpg" alt="" >
+                    <h3>Chicken Italiano Panini
+                        <small>€4.95</small>
+                    </h3>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img class="img-responsive" src="img/chicken.jpg" alt="" >
+                    <h3>Hot Chicken Roll
+                        <small>€3.95</small>
+                    </h3>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Copyright &copy; GMIT Catering Company 2014</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/orderCalculations.js"></script>
+
+</body>
+
+</html>
